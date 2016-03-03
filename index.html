@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Avatars Of The Wind</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="p5.min.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="JSARToolKit.min.js"></script>
+  <script src="magi.js"></script>
+  <style>*{font-family: sans-serif;}</style>
+</head>
+<body>
+      <div class="video-section">
+        <video autoplay loop id="demo"> //mutes
+            <source src="balloon_long_edit.mp4" type="video/mp4"> </video>
+        <div class="section-content container">
+            
+            <!--<p><a class="btn" href="#">Download Excursion</a></p>-->
+        </div>
+      </div>
+  <div>
+  <button onclick="document.getElementById('demo').play()">Play</button>
+  <button onclick="document.getElementById('demo').pause()">Pause</button>
+  <button onclick="document.getElementById('demo').volume+=0.5">Increase Volume</button>
+  <button onclick="document.getElementById('demo').volume-=0.5">Decrease Volume</button>
+</div>
+
+  <p>
+    <input type="range" id="thresholdAmount" value="50">
+    Markers detected: <span id="markersDetected"></span>
+  </p>
+  
+  
+  <script src="sketch.js"></script>
+</body>
+</html>
