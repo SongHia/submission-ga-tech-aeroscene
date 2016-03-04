@@ -10,27 +10,16 @@
   <style>*{font-family: sans-serif;}</style>
 </head>
 <body>
-      <div class="video-section">
-        <video autoplay loop id="demo"> //mutes
-            <source src="balloon_long_edit.mp4" type="video/mp4"> </video>
-        <div class="section-content container">
-            
-            <!--<p><a class="btn" href="#">Download Excursion</a></p>-->
-        </div>
-      </div>
-  <div>
-  <button onclick="document.getElementById('demo').play()">Play</button>
-  <button onclick="document.getElementById('demo').pause()">Pause</button>
-  <button onclick="document.getElementById('demo').volume+=0.5">Increase Volume</button>
-  <button onclick="document.getElementById('demo').volume-=0.5">Decrease Volume</button>
-</div>
+  <div class="video-section">
+    <video autoplay loop id="demo">
+        <source src="balloon_long_edit.mp4" type="video/mp4">
+    </video>
+    <div class="section-content container"></div>
+  </div>
+  <div class="overlay"></div>
+  <svg id="chart"></svg>
 
-  <p>
-    <input type="range" id="thresholdAmount" value="50">
-    Markers detected: <span id="markersDetected"></span>
-  </p>
-  
-  
+  <script src="d3.v3.min.js"></script>
   <script src="sketch.js"></script>
 </body>
 </html>
