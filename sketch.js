@@ -15,7 +15,7 @@ var svg = d3.select('#chart')
 
 svg.append('filter').attr('id','blur')
   .append('feGaussianBlur')
-  .attr('stdDeviation',8)
+  .attr('stdDeviation',5)
 
 svg.append('defs').append('pattern').attr('id','pattern')
   .attr('x',2)
@@ -64,15 +64,13 @@ function draw() {
   if(detected > 0) {
     detectedOn = true;
     // console.log('detection: sweet spot');
-    vid.playbackRate =.3;
   }else{
     detected = 0
     detectedOn = false;
     // console.log('detection: off');
-    vid.playbackRate =3;
-    vid.play();
+
   }
-  debounce(move(xAvg,yAvg),100)
+  debounce(move(xAvg,yAvg),200)
 
 
 
@@ -128,12 +126,15 @@ function move() {
     .attr('cy',yAvg)
 
   vid.volume = audioScale(yAvg)
+  vid.playbackRate = videoScale(yAvg)
 
   if(detected>0){
     circle.style('opacity',.6)
   }else{
     circle.style('opacity',0)
+    // vid.pause();
   }
+  // vid.play();
 }
 
 function debounce(func, wait, immediate) {
