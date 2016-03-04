@@ -9,7 +9,7 @@ var vid;
 
 var raster, param, pmat, resultMat, detector;
 
-var audioScale = d3.scale.linear().domain([0,760]).range([.2,1]).nice()
+var audioScale = d3.scale.linear().domain([0,760]).range([.1,1]).nice()
 var videoScale = d3.scale.linear().domain([0,1280]).range([.3,5]).nice()
 var svg = d3.select('#chart')
 
